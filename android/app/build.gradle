@@ -51,7 +51,9 @@ android {
 }
 
 dependencies {
-    implementation("com.facebook.react:react-android:0.80.0") // ✅ Explicit version to avoid AAR issues
+    implementation("com.facebook.react:react-android:0.80.0") 
+    implementation 'com.facebook.fbjni:fbjni:0.2.2'
+// ✅ Explicit version to avoid AAR issues
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
