@@ -1,0 +1,22 @@
+
+[
+    {
+      "id": "S001",
+      "name": "Ravi Kumar",
+      "roll": "101",
+      "image": "https://www.freepik.com/free-photo/portrait-delighted-hipster-male-student-with-crisp-hair_8757556.htm#fromView=keyword&page=1&position=3&uuid=d5336e75-9915-4858-9bc5-281aa9081f2e&query=Student+Face"
+    },
+    {
+      "id": "S002",
+      "name": "Ravi Kumar",
+      "roll": "101",
+      "image": "https://example.com/students/ravi.jpg"
+    },
+    {
+      "id": "S003",
+      "name": "Ravi Kumar",
+      "roll": "101",
+      "image": "https://example.com/students/ravi.jpg"
+    }
+    
+  ]

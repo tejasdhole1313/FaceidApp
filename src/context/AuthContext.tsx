@@ -1,15 +1,12 @@
-// src/context/AuthContext.tsx
 import React, { createContext, useState, ReactNode } from 'react';
 
 type AuthContextType = {
   isLoggedIn: boolean;
   setIsLoggedIn: (value: boolean) => void;
 };
-
-// ✅ Default value satisfies TypeScript
 export const AuthContext = createContext<AuthContextType>({
   isLoggedIn: false,
-  setIsLoggedIn: () => {}, // no-op fallback
+  setIsLoggedIn: () => {}, 
 });
 
 type AuthProviderProps = {

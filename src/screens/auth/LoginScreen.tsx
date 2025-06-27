@@ -1,9 +1,13 @@
 // screens/LoginScreen.tsx
 import React, { useContext, useState } from 'react';
-import { View, Text, Button, TextInput, StyleSheet, Alert } from 'react-native';
+import { View, Text, Button, TextInput, StyleSheet, Alert, TouchableOpacity } from 'react-native';
 import { AuthContext } from '../../context/AuthContext';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import type { RootStackParamList } from '../../navigation/types';
 
-export default function LoginScreen({ navigation }) {
+type LoginScreenProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
+
+export default function LoginScreen({ navigation }: LoginScreenProps) {
   const { setIsLoggedIn } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -11,7 +15,8 @@ export default function LoginScreen({ navigation }) {
 
   const handleLogin = () => {
     if (email === 'tejas@123.com' && password === '12345') {
-      setIsLoggedIn(true); // 
+      setIsLoggedIn(true); 
+      navigation.navigate('Home');
     } else {
       setError('Invalid email or password');
     }
@@ -24,6 +29,7 @@ export default function LoginScreen({ navigation }) {
       <TextInput
         style={styles.input}
         placeholder="Email"
+        placeholderTextColor="black"
         value={email}
         autoCapitalize="none"
         keyboardType="email-address"
@@ -33,6 +39,8 @@ export default function LoginScreen({ navigation }) {
       <TextInput
         style={styles.input}
         placeholder="Password"
+        placeholderTextColor="black"
+        autoCapitalize="none"
         value={password}
         secureTextEntry
         onChangeText={setPassword}
@@ -40,7 +48,10 @@ export default function LoginScreen({ navigation }) {
 
       {error ? <Text style={styles.error}>{error}</Text> : null}
 
-      <Button title="Login" onPress={handleLogin} />
+      <TouchableOpacity onPress={handleLogin} style={styles.button}>
+        <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity>
+
 
       <Text style={styles.link} onPress={() => navigation.navigate('Signup')}>
         Don't have an account? Sign up
@@ -73,7 +84,18 @@ const styles = StyleSheet.create({
   },
   link: {
     marginTop: 20,
-    color: 'blue',
+    color: '#000',
     textAlign: 'center',
+  },
+  button: {
+    backgroundColor: '#04AA6D',
+    padding: 10,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
+    fontFamily:"600",
+    fontSize:16,
   },
 });

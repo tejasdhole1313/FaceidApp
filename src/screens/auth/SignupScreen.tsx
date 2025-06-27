@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
-
 const SignupScreen = ({ navigation }: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
   const handleSignup = () => {
-    // In real app, you'd register user.
     console.log('User registered:', email);
     navigation.navigate('Login');
   };
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Sign Up</Text>
