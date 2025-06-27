@@ -8,7 +8,8 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
        <Headers   />
-       <CameraScreen />
+       {/* <CameraScreen /> */}
+       <Text>rytu</Text>
     
     </SafeAreaView>
   );
